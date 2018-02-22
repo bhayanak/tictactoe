@@ -4,6 +4,7 @@ var player2 = ""
 var currentPlayer = ""
 
 document.getElementById("restart").disabled = true
+document.getElementById("board").style.display = "none"
 
 startGame = document.getElementById("form")
 if (startGame !== null) {
@@ -18,6 +19,7 @@ if (startGame !== null) {
         player2 = playerFactory(playertwo, player2Symbol);
         console.log({ player1, player2 })
         startGame.style.display = "none"
+        document.getElementById("board").style.display = "block"
     })
 }
 
