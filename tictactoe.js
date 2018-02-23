@@ -8,9 +8,7 @@ document.getElementById("restart").disabled = true
 document.getElementById("board").style.display = "none"
 
 startGame = document.getElementById("form")
-if (startGame !== null) {
-    startGame.addEventListener("submit", function (e) {e.preventDefault(); playerone = document.getElementById("player1").value; playertwo = document.getElementById("player2").value;console.log(playerone + " and " + playertwo + " starting a game of tic-tac-toe.");const player1Symbol = "O"; const player2Symbol = "X"; player1 = playerFactory(playerone, player1Symbol); player2 = playerFactory(playertwo, player2Symbol); console.log({ player1, player2 });startGame.style.display = "none"; document.getElementById("board").style.display = "block"; });
-}
+if (startGame !== null) {startGame.addEventListener("submit", function (e) {e.preventDefault(); playerone = document.getElementById("player1").value; playertwo = document.getElementById("player2").value;console.log(playerone + " and " + playertwo + " starting a game of tic-tac-toe.");const player1Symbol = "O"; const player2Symbol = "X"; player1 = playerFactory(playerone, player1Symbol); player2 = playerFactory(playertwo, player2Symbol); console.log({ player1, player2 });startGame.style.display = "none"; document.getElementById("board").style.display = "block"; });}
 const playerFactory = (name, symbol) => {return { name, symbol };};
 var table = document.getElementById("table")
 var i = 0
