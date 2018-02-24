@@ -15,7 +15,7 @@ var i = 0
 var gameOver = false
 table.addEventListener("click", function (e) {if (e.target && e.target.nodeName == "TD") {cell = e.target.innerHTML;if (cell == "" || cell == undefined){if (!gameOver){currentPlayer = changePlayer(i);e.target.innerHTML = currentPlayer.symbol; gameBoard[Number(e.target.attributes["0"].nodeValue)] = currentPlayer.symbol; console.log(gameBoard);if (i == 8){console.log("Nobody won the game. It's a tie. Restart to play again.");startGame.innerHTML = "Nobody won the game. It's a tie. Restart to play again.";gameOver = true;document.getElementById("restart").disabled = false;document.getElementById("banner").innerHTML="Nobody won the game. It's a tie. Restart to play again.";} if (checkIfWon(gameBoard, currentPlayer, i)) {console.log(currentPlayer.name + " won the game. Restart to play again."); startGame.innerHTML = currentPlayer.name + " won the game. Restart to play again.";gameOver = true;document.getElementById("restart").disabled = false;document.getElementById("banner").innerHTML=currentPlayer.name + " won the game. Restart to play again.";}}i++;}}})
 function changePlayer(i) {return (i % 2 == 0) ? player1 : player2;}
-function checkIfWon(gameBoard, currentPlayer, i) {if (i < 5) return false; return checkWin(gameBoard, currentPlayer.symbol);}
+function checkIfWon(gameBoard, currentPlayer, i) {if (i < 4) return false; return checkWin(gameBoard, currentPlayer.symbol);}
 function checkWin(gameBoard, symbol) {var gotWinner = false; 
         wins.forEach(a => {if ((gameBoard[a[0]] == symbol) && (gameBoard[a[1]] == symbol) && (gameBoard[a[2]] == symbol)) {console.log("looks like we got winner.");gotWinner = true;return false;}}); return gotWinner
 }
